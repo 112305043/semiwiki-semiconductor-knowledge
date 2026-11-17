@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="以初學者易懂的方式認識 ASIC、IC Design、Foundry、半導體產業鏈與 GPU 的差異。">
+    <title>ASIC 與半導體產業介紹 | SemiWiki</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Semi<span>Wiki.</span></a>
+            <nav class="nav-links" id="navLinks" aria-label="主要導覽">
+                <a href="../index.html#home">首頁</a>
+                <a href="../index.html#industry">產業知識</a>
+                <a href="../index.html#companies">企業介紹</a>
+                <a href="../index.html#analysis">產業分析</a>
+                <a href="../index.html#glossary">專業名詞</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="開啟導覽選單" aria-controls="navLinks">☰</button>
+        </div>
+    </header>
+
+    <main class="industry-page">
+        <section class="industry-hero">
+            <div class="container">
+                <span class="eyebrow">SEMICONDUCTOR INDUSTRY GUIDE</span>
+                <h1>從 ASIC 出發，<br><span>看懂半導體產業鏈。</span></h1>
+                <p>ASIC 如何從設計概念變成實體晶片？IC Design 與 Foundry 又如何分工？本篇以淺白的方式帶你理解設計流程、產業角色與常見商業模式。</p>
+                <nav class="industry-toc" aria-label="本頁內容">
+                    <a href="#asic">ASIC 是什麼</a>
+                    <a href="#ic-design">IC Design</a>
+                    <a href="#foundry">Foundry</a>
+                    <a href="#gpu">ASIC 與 GPU</a>
+                </nav>
+            </div>
+        </section>
+
+        <section class="section-padding industry-section" id="asic">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">01 / ASIC BASICS</span>
+                        <h2>ASIC 是什麼？</h2>
+                        <p>為特定應用量身打造的積體電路。</p>
+                    </div>
+                </div>
+                <div class="industry-copy">
+                    <p><strong>ASIC</strong> 是 <em>Application-Specific Integrated Circuit</em> 的縮寫，中文常稱「特殊應用積體電路」。它是針對一項產品、工作或一類明確用途設計的晶片，而不是以通用性為首要目標的處理器。</p>
+                    <p>例如，網路交換器、儲存裝置、攝影機或 AI 加速器都可能採用 ASIC。晶片可將特定運算或控制功能整合在一起；它可能是客戶委託設計，也可能是公司開發後提供給多個客戶使用。ASIC 描述的是用途導向的設計方式，不代表一定只供單一客戶使用。</p>
+                </div>
+                <div class="industry-card-grid industry-card-grid--three">
+                    <article class="industry-card">
+                        <span class="industry-card-mark">01</span>
+                        <h3>用途明確</h3>
+                        <p>依產品需求選擇功能與架構，讓晶片針對預定工作進行最佳化。</p>
+                    </article>
+                    <article class="industry-card">
+                        <span class="industry-card-mark">02</span>
+                        <h3>軟硬體協作</h3>
+                        <p>晶片規格、韌體、軟體與系統設計必須配合，才能發揮整體效能。</p>
+                    </article>
+                    <article class="industry-card">
+                        <span class="industry-card-mark">03</span>
+                        <h3>前期投入高</h3>
+                        <p>設計、驗證與投片成本可觀，通常要評估預期出貨量和產品生命週期。</p>
+                    </article>
+                </div>
+                <aside class="industry-note">
+                    <strong>簡單比喻</strong>
+                    <p>通用處理器像多功能工具箱；ASIC 則像為特定工作設計的專用工具。專用工具可能更有效率，但用途改變時不一定能輕易重新調整。</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section-padding industry-section industry-section--tint">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">02 / FROM IDEA TO CHIP</span>
+                        <h2>ASIC 的設計與製造流程</h2>
+                        <p>從需求定義到量產，需經過多輪驗證與跨公司協作。</p>
+                    </div>
+                </div>
+                <ol class="industry-flow">
+                    <li><span>01</span><div><h3>需求與規格</h3><p>定義用途、功能、效能、功耗、成本、介面與上市時程。</p></div></li>
+                    <li><span>02</span><div><h3>架構與 RTL 設計</h3><p>規劃晶片模組與資料路徑，使用硬體描述語言撰寫數位邏輯。</p></div></li>
+                    <li><span>03</span><div><h3>功能驗證</h3><p>以模擬及其他驗證方法檢查設計是否符合規格，降低錯誤流入後段的風險。</p></div></li>
+                    <li><span>04</span><div><h3>邏輯合成與實體設計</h3><p>將 RTL 轉換成標準元件，再安排晶片上的元件、時脈與連線。</p></div></li>
+                    <li><span>05</span><div><h3>簽核與 Tape-out</h3><p>完成時序、功耗、可靠度等檢查，將確認後的版圖資料交付晶圓廠。</p></div></li>
+                    <li><span>06</span><div><h3>晶圓製造、封裝與測試</h3><p>Foundry 製作晶圓，封測廠切割、封裝並測試晶片，合格產品再導入系統。</p></div></li>
+                </ol>
+                <p class="industry-caption">實際專案會依製程、產品及設計方法調整，部分步驟也會反覆迭代。</p>
+            </div>
+        </section>
+
+        <section class="section-padding industry-section">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">03 / APPLICATIONS</span>
+                        <h2>ASIC 的主要應用</h2>
+                        <p>當產品有穩定且明確的工作負載，專用晶片就可能帶來價值。</p>
+                    </div>
+                </div>
+                <div class="industry-card-grid industry-card-grid--three">
+                    <article class="industry-card"><span class="industry-card-tag">AI & DATA CENTER</span><h3>AI 與資料中心</h3><p>加速特定 AI 推論、資料搬移或資料中心工作負載，並配合服務平台設計。</p></article>
+                    <article class="industry-card"><span class="industry-card-tag">NETWORKING</span><h3>網路與通訊</h3><p>處理交換、封包轉送、訊號處理及通訊設備中的專用功能。</p></article>
+                    <article class="industry-card"><span class="industry-card-tag">CONSUMER</span><h3>消費性電子</h3><p>常見於手機、電視、相機、穿戴裝置及智慧家庭產品的控制或多媒體功能。</p></article>
+                    <article class="industry-card"><span class="industry-card-tag">AUTOMOTIVE</span><h3>車用電子</h3><p>用於車載控制、感測資料處理、駕駛輔助與車用連網系統。</p></article>
+                    <article class="industry-card"><span class="industry-card-tag">STORAGE</span><h3>儲存與運算</h3><p>協助 SSD、硬碟控制器及其他系統執行資料管理或特定運算。</p></article>
+                    <article class="industry-card"><span class="industry-card-tag">INDUSTRIAL</span><h3>工業與 IoT</h3><p>支援工業控制、感測器、邊緣運算與低功耗連網設備。</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding industry-section industry-section--tint" id="ic-design">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">04 / IC DESIGN</span>
+                        <h2>IC Design：把需求轉成晶片設計</h2>
+                        <p>IC 設計公司負責晶片的規劃與設計，通常不自行經營大規模晶圓廠。</p>
+                    </div>
+                </div>
+                <div class="industry-split">
+                    <div class="industry-copy">
+                        <p><strong>IC Design（積體電路設計）</strong>涵蓋規格定義、電路與邏輯設計、驗證，以及與製程、封裝和軟體團隊的協作。設計公司會使用 EDA（電子設計自動化）工具，並依目標晶圓廠的製程規則完成設計。</p>
+                        <p>常見的<strong>無晶圓廠（Fabless）</strong>公司專注於產品與晶片設計，再委託 Foundry 生產；而整合元件製造商（IDM）則可能同時設計並自行製造部分晶片。公司採用哪種模式，取決於產品策略、資本需求與製造能力。</p>
+                    </div>
+                    <div class="industry-highlight">
+                        <span class="industry-card-tag">KEY IDEA</span>
+                        <h3>設計是產業鏈的起點之一</h3>
+                        <p>設計團隊決定晶片「要做什麼、如何運作」；但是否能量產，仍須仰賴製程設計套件、晶圓製造、封裝測試及系統驗證。</p>
+                    </div>
+                </div>
+                <div class="industry-models">
+                    <article><h3>自有產品</h3><p>設計公司開發晶片並銷售給設備商、模組商或系統廠。</p></article>
+                    <article><h3>客製化設計服務</h3><p>依客戶需求協助規格、設計或專案交付，可能收取設計服務費。</p></article>
+                    <article><h3>IP 授權</h3><p>將可重複使用的矽智財（IP）授權給客戶，依合約收取授權或權利金。</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding industry-section" id="foundry">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">05 / FOUNDRY</span>
+                        <h2>Foundry：依設計製造晶片</h2>
+                        <p>Foundry（晶圓代工）提供製程與製造服務，讓客戶的設計能在晶圓上實現。</p>
+                    </div>
+                </div>
+                <div class="industry-copy">
+                    <p>Foundry 維護晶圓製造設備與製程技術，並提供設計規則、製程設計套件（PDK）等資源，協助客戶將設計轉換為可製造的版圖。晶片完成晶圓製造後，通常還要交由封裝與測試業者進行後段製程。</p>
+                    <p>晶圓廠需要投入大量資本與長期技術開發；客戶則需考量目標製程是否適合產品的效能、功耗、成本、良率和供應需求。並非每種產品都需要最先進製程。</p>
+                </div>
+                <div class="industry-highlight industry-highlight--wide">
+                    <span class="industry-card-tag">HOW THE BUSINESS WORKS</span>
+                    <h3>晶圓代工的商業模式</h3>
+                    <p>客戶提供已完成簽核的設計資料，與 Foundry 確認製程與製造需求，再依投片、晶圓數量、製程及服務內容支付費用。產能規劃、良率、交期與供應穩定性都是合作的重要考量；具體價格與合約條件則依專案而異。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding industry-section industry-section--tint">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">06 / INDUSTRY VALUE CHAIN</span>
+                        <h2>半導體產業鏈的主要角色</h2>
+                        <p>一顆晶片從概念到產品，需要許多專業團隊分工合作。</p>
+                    </div>
+                </div>
+                <div class="industry-chain">
+                    <article><span>01</span><h3>IP 與 EDA</h3><p>提供可重用的矽智財模組，以及設計、模擬和驗證工具。</p></article>
+                    <article><span>02</span><h3>IC 設計公司</h3><p>規劃晶片架構、完成設計與驗證，並整合成可製造的版圖。</p></article>
+                    <article><span>03</span><h3>Foundry</h3><p>依製程技術將設計製作成晶圓上的電路。</p></article>
+                    <article><span>04</span><h3>封裝與測試</h3><p>封裝晶粒、測試電性與功能，支援產品出貨品質。</p></article>
+                    <article><span>05</span><h3>系統與品牌廠</h3><p>將晶片整合進設備、軟體與服務，交付終端市場。</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding industry-section">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">07 / TRADE-OFFS</span>
+                        <h2>ASIC 的優勢與限制</h2>
+                        <p>專用化能帶來效益，也伴隨投入與彈性的取捨。</p>
+                    </div>
+                </div>
+                <div class="industry-pros-cons">
+                    <article class="industry-pros">
+                        <h3>可能的優勢</h3>
+                        <ul>
+                            <li>針對固定工作負載最佳化，有機會提升效能或能源效率。</li>
+                            <li>可整合特定功能，協助縮小系統體積或降低單位產品成本。</li>
+                            <li>有助於產品差異化，並可依系統需求共同設計軟硬體。</li>
+                        </ul>
+                    </article>
+                    <article class="industry-cons">
+                        <h3>需要考量的限制</h3>
+                        <ul>
+                            <li>設計、驗證與投片前期成本高，且開發週期可能較長。</li>
+                            <li>量產前須投入大量驗證；若設計錯誤，修正可能需要重新投片。</li>
+                            <li>功能彈性通常低於可程式化處理器，難以快速因應工作負載改變。</li>
+                            <li>成本效益與量產規模、良率、供應鏈及產品壽命密切相關。</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding industry-section industry-section--tint" id="gpu">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">08 / ASIC VS. GPU</span>
+                        <h2>ASIC 與 GPU 有什麼不同？</h2>
+                        <p>兩者不是完全互斥的分類：GPU 晶片本身也會以 ASIC 方式設計製造。</p>
+                    </div>
+                </div>
+                <div class="industry-table-wrap" role="region" aria-label="ASIC 與 GPU 比較表" tabindex="0">
+                    <table class="industry-table">
+                        <thead>
+                            <tr><th scope="col">比較面向</th><th scope="col">ASIC（專用晶片）</th><th scope="col">GPU（圖形處理器）</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">主要定位</th><td>為特定產品或工作負載設計的晶片類型。</td><td>以大量平行運算見長的處理器類型，原為圖形處理而發展，也廣泛用於通用運算。</td></tr>
+                            <tr><th scope="row">工作彈性</th><td>硬體功能較固定，依賴產品設計時預先定義的用途。</td><td>可透過程式與軟體工具支援多種運算工作負載。</td></tr>
+                            <tr><th scope="row">效能與效率</th><td>若工作負載明確且設計合適，可能在特定任務上達到較佳效率。</td><td>可處理多樣且平行度高的工作；實際表現受架構、程式與工作負載影響。</td></tr>
+                            <tr><th scope="row">前期投入</th><td>需要較多專用設計、驗證和製造準備，投資回收仰賴需求與規模。</td><td>使用現成 GPU 平台可免去自行設計晶片，但仍需評估硬體及軟體成本。</td></tr>
+                            <tr><th scope="row">常見考量</th><td>適合需求穩定、規模足以支持客製化的產品或服務。</td><td>適合需要彈性、快速迭代，或工作負載多樣的運算情境。</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <aside class="industry-note">
+                    <strong>重要補充</strong>
+                    <p>「ASIC 對 GPU」並非完全同一層級的對照：ASIC 說明晶片的應用導向設計特性；GPU 則是處理器類別。GPU 通常本身就是為圖形與平行運算用途設計的專用晶片。選擇哪種方案，應依工作負載、軟體生態、成本、功耗與開發時程評估。</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section-padding industry-summary">
+            <div class="container industry-summary-layout">
+                <div>
+                    <span class="section-label">KEY TAKEAWAYS</span>
+                    <h2>重點整理</h2>
+                </div>
+                <ul>
+                    <li>ASIC 是以特定用途為目標設計的積體電路。</li>
+                    <li>IC Design 負責規劃及設計晶片，Foundry 負責依設計製造晶圓。</li>
+                    <li>量產還需要 IP、EDA、封裝測試及系統廠等角色共同參與。</li>
+                    <li>ASIC 能針對工作負載最佳化，但前期成本、開發週期與彈性都需衡量。</li>
+                    <li>GPU 可視為一種用途明確的處理器；與 ASIC 的比較應回到實際工作負載。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-padding industry-section">
+            <div class="container industry-references">
+                <div>
+                    <span class="section-label">FURTHER READING</span>
+                    <h2>參考資料</h2>
+                    <p>延伸閱讀半導體設計、製造與運算架構的入門資訊。</p>
+                </div>
+                <ul>
+                    <li><a href="https://www.arm.com/glossary/asic" target="_blank" rel="noopener noreferrer">Arm：What is an ASIC?</a></li>
+                    <li><a href="https://www.tsmc.com/english/dedicatedFoundry/technology" target="_blank" rel="noopener noreferrer">TSMC：Technology</a></li>
+                    <li><a href="https://www.semiconductors.org/" target="_blank" rel="noopener noreferrer">Semiconductor Industry Association：產業資訊</a></li>
+                    <li><a href="https://www.intel.com/content/www/us/en/products/docs/processors/what-is-a-gpu.html" target="_blank" rel="noopener noreferrer">Intel：What Is a GPU?</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="../index.html" class="logo">Semi<span>Wiki.</span></a>
+            <p>Exploring the Semiconductor Industry.</p>
+            <p class="copyright">© 2026 SemiWiki. Educational Project.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
